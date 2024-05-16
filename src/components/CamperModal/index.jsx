@@ -1,22 +1,20 @@
 import s from './CamperModal.module.css';
 
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { Suspense } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 function CamperModal() {
-  //   const navigate = useNavigate();
-  const location = useLocation();
-  console.log('camper modal', location);
+  const { camperId } = useParams();
 
   return (
     <div className={s.modal}>
-      Modal camper #2
+      `Modal camper #${camperId}`
       <ul>
         <li>
-          <NavLink to={''} />
+          <NavLink to={''}>Features</NavLink>
         </li>
         <li>
-          <NavLink to={'revievs'} />
+          <NavLink to={'reviews'}>Revievs</NavLink>
         </li>
       </ul>
       <Suspense fallback={<p>...loading</p>}>

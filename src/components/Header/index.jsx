@@ -9,10 +9,10 @@ function Header() {
             <NavLink to={'/'}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={'/campers'}>Rent</NavLink>
+            <NavLink to={'/catalog'}>Rent</NavLink>
           </li>
           <li>
-            <NavLink to={'/favourites'}>Favourites</NavLink>
+            <NavLink to={'/favorites'}>Favourites</NavLink>
           </li>
         </ul>
       </nav>

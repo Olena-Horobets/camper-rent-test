@@ -1,34 +1,56 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+
+import data from 'data.json';
 
 function CampersPage() {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log('campers page', location);
+
   return (
     <div>
-      campers
       <ul>
-        <li key={'1'} id="1">
-          1
-          <button
-            onClick={() =>
-              navigate('modal/1', { state: { previousLocation: location } })
-            }
-          >
-            Show more
-          </button>
-        </li>
-        <li key={'2'} id="2">
-          2
-          <button
-            onClick={() =>
-              navigate('modal/2', { state: { previousLocation: location } })
-            }
-          >
-            Show more
-          </button>
-        </li>
+        {data.map(el => {
+          return (
+            <li key={el._id}>
+              <h2>{el.name}</h2>
+              <p>{el.price}</p>
+              <p>{el.rating}</p> <p>{el.location}</p>
+              {/* <p>{el.description}</p> */}
+              <h3>Vehicle details</h3>
+              <ul>
+                <li>
+                  <span>Form</span>
+                  <span>{el.form}</span>
+                </li>
+                <li>
+                  <span>Length</span>
+                  <span>{el.length}</span>
+                </li>
+                <li>
+                  <span>Width</span>
+                  <span>{el.width}</span>
+                </li>
+                <li>
+                  <span>Height</span>
+                  <span>{el.height}</span>
+                </li>
+                <li>
+                  <span>Tank</span>
+                  <span>{el.tank}</span>
+                </li>
+                <li>
+                  <span>Consumption</span>
+                  <span>{el.consumption}</span>
+                </li>
+              </ul>
+              {/* <NavLink to={`camper/${el._id}`}> Show more</NavLink> */}
+              <button onClick={() => navigate(`camper/${el._id}`)}>
+                Show more
+              </button>
+            </li>
+          );
+        })}
       </ul>
+      <Outlet></Outlet>
     </div>
   );
 }
