@@ -8,8 +8,12 @@ import FavouritesPage from 'pages/FavouritesPage';
 import Features from './Features';
 import Reviews from './Reviews';
 import CamperModal from './CamperModal';
+import ModalBackdrop from './ModalBackdrop';
 
 export const App = () => {
+  // const location = useLocation();
+  // const background = location.state && location.state.background;
+
   return (
     <div className="container">
       <Header />
@@ -18,10 +22,17 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CampersPage />}>
-            <Route path="camper/:camperId" element={<CamperModal />}>
-              <Route index element={<Features />} />
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
+            <Route
+              path="camper/:camperId"
+              element={
+                <ModalBackdrop>
+                  <CamperModal>
+                    <Route index element={<Features />} />
+                    <Route path="reviews" element={<Reviews />} />
+                  </CamperModal>
+                </ModalBackdrop>
+              }
+            ></Route>
           </Route>
           <Route path="/favorites" element={<FavouritesPage />} />
           <Route path="/*" element={<div>error</div>} />

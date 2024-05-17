@@ -1,5 +1,19 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root {
+  --main-dark-color: #101828;
+  --dark-grey-color: #475467;
+  --accent-color: #e44848;
+  --yellow-color: #ffc531;
+  --light-gray-color: #f2f4f7;
+  --light-color: #f7f7f7;
+  --white-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,9 +21,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--white-color);
+  font-weight: 500;
+  color: var(--main-dark-color);
+  cursor: default;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.bodyFixed {
+  position: fixed;
 }

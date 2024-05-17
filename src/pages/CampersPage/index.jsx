@@ -1,9 +1,17 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import data from 'data.json';
 
 function CampersPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const onOpenModalClick = id => {
+    document.querySelector('body').classList.add('bodyFixed');
+    navigate(`camper/${id}`, {
+      state: { background: location },
+    });
+  };
 
   return (
     <div>
@@ -42,8 +50,7 @@ function CampersPage() {
                   <span>{el.consumption}</span>
                 </li>
               </ul>
-              {/* <NavLink to={`camper/${el._id}`}> Show more</NavLink> */}
-              <button onClick={() => navigate(`camper/${el._id}`)}>
+              <button onClick={() => onOpenModalClick(el._id)}>
                 Show more
               </button>
             </li>
