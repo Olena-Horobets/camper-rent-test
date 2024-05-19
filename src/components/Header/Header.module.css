@@ -1,0 +1,8 @@
+/* nav link */
+.navLink {
+}
+
+.navLinkActive {
+  composes: navLink;
+  color: var(--accent-color);
+}

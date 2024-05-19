@@ -7,20 +7,33 @@ function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
   const location = useLocation();
 
-  console.log(location);
-  console.log(location.state.background);
-
   return (
     <div className={s['modal']}>
       Modal camper #${camperId} <button onClick={onModalClose}>Close</button>
       <ul>
         <li>
-          <NavLink to={''} state={{ background: location }}>
+          <NavLink
+            to={'features'}
+            state={{
+              background: location.state?.background || {
+                pathname: '/catalog',
+              },
+            }}
+            className={({ isActive }) =>
+              isActive ? s['navLinkActive'] : s['navLink']
+            }
+          >
             Features
           </NavLink>
         </li>
         <li>
-          <NavLink to={'reviews'} state={{ background: location }}>
+          <NavLink
+            to={'reviews'}
+            state={{ background: location.state?.background }}
+            className={({ isActive }) =>
+              isActive ? s['navLinkActive'] : s['navLink']
+            }
+          >
             Revievs
           </NavLink>
         </li>

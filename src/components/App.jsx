@@ -11,9 +11,6 @@ import CamperModal from './CamperModal';
 import ModalBackdrop from './ModalBackdrop';
 
 export const App = () => {
-  // const location = useLocation();
-  // const background = location.state && location.state.background;
-
   return (
     <div className="container">
       <Header />
@@ -26,13 +23,13 @@ export const App = () => {
               path="camper/:camperId"
               element={
                 <ModalBackdrop>
-                  <CamperModal>
-                    <Route index element={<Features />} />
-                    <Route path="reviews" element={<Reviews />} />
-                  </CamperModal>
+                  <CamperModal />
                 </ModalBackdrop>
               }
-            ></Route>
+            >
+              <Route index path="features" element={<Features />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Route>
           </Route>
           <Route path="/favorites" element={<FavouritesPage />} />
           <Route path="/*" element={<div>error</div>} />

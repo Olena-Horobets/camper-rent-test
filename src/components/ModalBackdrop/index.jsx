@@ -1,7 +1,7 @@
-import { useLocation, useNavigate } from 'react-router-dom';
 import s from './ModalBackdrop.module.css';
 
 import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function ModalBackdrop({ children }) {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function ModalBackdrop({ children }) {
         return;
       }
 
-      onModalClose();
+      closeModal();
     };
 
     document.addEventListener('keydown', onEscPress);
@@ -24,9 +24,14 @@ export default function ModalBackdrop({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onModalClose = () => {
+  const closeModal = () => {
     document.querySelector('body').classList.remove('bodyFixed');
     navigate(location.state?.background);
+  };
+
+  const onModalClose = e => {
+    if (e.target !== e.currentTarget) return;
+    closeModal();
   };
 
   const modalWindowContent = () =>

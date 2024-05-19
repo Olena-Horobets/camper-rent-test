@@ -1,3 +1,5 @@
+import s from './Header.module.css';
+
 import { NavLink } from 'react-router-dom';
 
 function Header() {
@@ -6,13 +8,34 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to={'/'}>Home</NavLink>
+            <NavLink
+              to={'/'}
+              className={({ isActive }) =>
+                isActive ? s['navLinkActive'] : s['navLink']
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to={'/catalog'}>Rent</NavLink>
+            <NavLink
+              to={'/catalog'}
+              className={({ isActive }) =>
+                isActive ? s['navLinkActive'] : s['navLink']
+              }
+            >
+              Rent
+            </NavLink>
           </li>
           <li>
-            <NavLink to={'/favorites'}>Favourites</NavLink>
+            <NavLink
+              to={'/favorites'}
+              className={({ isActive }) =>
+                isActive ? s['navLinkActive'] : s['navLink']
+              }
+            >
+              Favourites
+            </NavLink>
           </li>
         </ul>
       </nav>
