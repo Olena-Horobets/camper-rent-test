@@ -1,0 +1,113 @@
+/* card layout */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  width: 888px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+
+  border-radius: 20px;
+  border: 1px solid #10182820;
+}
+
+.cardImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* card header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.cardHeaderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* card sub header */
+.cardSubHeader {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.itemRatingIcon {
+  fill: var(--yellow-color);
+  margin-right: 4px;
+}
+
+.itemRating {
+  border-bottom: 1px solid var(--main-dark-color);
+  margin-right: 16px;
+}
+
+.itemLocationIcon {
+  margin-right: 4px;
+}
+
+.itemDesc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 526px;
+  margin-bottom: 24px;
+
+  color: var(--dark-grey-color);
+}
+
+/* item detail list */
+.itemDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.itemDetailsPoint {
+  padding: 12px 18px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--light-gray-color);
+}
+
+.itemDetailsText {
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.itemDetailsTextCapital {
+  composes: itemDetailsText;
+  text-transform: capitalize;
+}
+
+/* card button */
+.cardBtn {
+  padding: 16px 40px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 200px;
+
+  transition: var(--transition);
+}
+.cardBtn:hover,
+.cardBtn:focus {
+  background-color: var(--dark-accent-color);
+}
