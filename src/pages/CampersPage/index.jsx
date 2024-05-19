@@ -1,10 +1,21 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-import data from 'data.json';
+import { useDispatch, useSelector } from 'react-redux';
+// import { selectIsLoading } from 'store/campers/selectors';
+import { getAllCampersAction } from 'store/campers/slice';
+import { selectCampers } from 'store/campers/selectors';
 
 function CampersPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  // const isLoading = useSelector(selectIsLoading);
+  const campers = useSelector(selectCampers);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCampersAction());
+  }, [dispatch]);
 
   const onOpenModalClick = id => {
     document.querySelector('body').classList.add('bodyFixed');
@@ -16,7 +27,7 @@ function CampersPage() {
   return (
     <div>
       <ul>
-        {data.map(el => {
+        {campers.map(el => {
           return (
             <li key={el._id}>
               <h2>{el.name}</h2>
