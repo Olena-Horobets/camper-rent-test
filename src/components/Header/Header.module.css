@@ -1,8 +1,10 @@
-/* nav link */
-.navLink {
-}
+.header {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  padding: 20px 60px 0px;
 
-.navLinkActive {
-  composes: navLink;
-  color: var(--accent-color);
+  border-bottom: 1px solid var(--light-grey-trans);
+  background-color: var(--white-trans);
+  backdrop-filter: var(--blur);
 }

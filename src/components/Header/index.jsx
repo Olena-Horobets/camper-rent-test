@@ -4,34 +4,34 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <header>
+    <header className={s.header}>
       <nav>
-        <ul>
-          <li>
+        <ul className="navigation">
+          <li className="navItem">
             <NavLink
               to={'/'}
               className={({ isActive }) =>
-                isActive ? s['navLinkActive'] : s['navLink']
+                isActive ? 'navLinkActive' : 'navLink'
               }
             >
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="navItem">
             <NavLink
               to={'/catalog'}
               className={({ isActive }) =>
-                isActive ? s['navLinkActive'] : s['navLink']
+                isActive ? 'navLinkActive' : 'navLink'
               }
             >
               Rent
             </NavLink>
           </li>
-          <li>
+          <li className="navItem">
             <NavLink
               to={'/favorites'}
               className={({ isActive }) =>
-                isActive ? s['navLinkActive'] : s['navLink']
+                isActive ? 'navLinkActive' : 'navLink'
               }
             >
               Favourites

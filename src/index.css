@@ -12,6 +12,8 @@
   --dark-accent-color: #d13d3d;
   --light-grey-trans: rgb(16, 24, 40, 20%);
   --dark-grey-trans: rgb(16, 24, 40, 60%);
+  --white-trans: #ffffffa3;
+  --blur: blur(2px);
 
   --transition: 150ms ease-out;
 }
@@ -94,4 +96,63 @@ button {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* scrollbar stylized */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(36, 36, 36, 0.8);
+  border-radius: 4px;
+}
+
+/* navigation */
+.navigation {
+  height: 48px;
+  display: flex;
+  gap: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.navItem {
+  height: 100%;
+}
+
+.navLink {
+  padding-bottom: 24px;
+  cursor: pointer;
+}
+.navLink::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+
+  transform: translateY(21px) scaleX(0);
+  transition: var(--transition);
+}
+
+.navLinkActive {
+  composes: navLink;
+}
+.navLinkActive::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+
+  transform: translateY(21px) scaleX(1);
+  transition: var(--transition);
 }

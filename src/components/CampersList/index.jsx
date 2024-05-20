@@ -25,7 +25,7 @@ export default function CampersList() {
 
   const onOpenModalClick = id => {
     document.querySelector('body').classList.add('bodyFixed');
-    navigate(`camper/${id}`, {
+    navigate(`camper/${id}/features`, {
       state: { background: location },
     });
   };

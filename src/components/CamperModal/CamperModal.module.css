@@ -1,27 +1,89 @@
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #27272773;
-}
-
 .modal {
-  width: 400px;
-  outline: 1px solid black;
-  background-color: #fff;
+  position: relative;
+  width: 982px;
+  height: 720px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--white-color);
+  overflow-y: scroll;
 }
 
-/* nav link */
-.navLink {
+.modalClose {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-dark-color);
+  background-color: transparent;
+
+  transition: var(--transition);
+}
+.modalClose:hover,
+.modalClose:focus {
+  color: var(--dark-accent-color);
 }
 
-.navLinkActive {
-  composes: navLink;
-  color: var(--accent-color);
+/* modal header */
+.modalHeader {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.modalTilte {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+
+.modalHeaderWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.itemRatingIcon {
+  fill: var(--yellow-color);
+  margin-right: 4px;
+}
+
+.itemRating {
+  border-bottom: 1px solid var(--main-dark-color);
+  margin-right: 16px;
+}
+
+.itemLocationIcon {
+  margin-right: 4px;
+}
+
+.modalPrice {
+  composes: modalTilte;
+  margin-bottom: 0;
+}
+
+/* gallery */
+.modalGallery {
+  margin-top: 102px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modalImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modalDesc {
+  margin-bottom: 44px;
+  color: var(--dark-grey-color);
+}
+
+.modalNavWrapper {
+  border-bottom: 1px solid var(--light-grey-trans);
 }
