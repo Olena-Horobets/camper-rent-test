@@ -8,7 +8,6 @@ import { ReactComponent as ReactSprite } from 'images/icons.svg';
 import { selectCampers, selectIsLoading } from 'store/campers/selectors';
 import { getAllCampersAction } from 'store/campers/slice';
 
-import data from 'data.json';
 import Button from 'components/Button';
 
 export default function CampersList() {
@@ -40,7 +39,7 @@ export default function CampersList() {
         <p>...loading</p>
       ) : (
         <ul className={s.list}>
-          {data.map(el => {
+          {campers.map(el => {
             return (
               <li key={el._id} className={s.card}>
                 <img
@@ -82,7 +81,7 @@ export default function CampersList() {
                   <ul className={s.itemDetails}>
                     <li className={s.itemDetailsPoint}>
                       <svg width="20" height="20" className={s.itemDetailsIcon}>
-                        <use href="#icon-adults"></use>
+                        <use href="#icon-Adults"></use>
                       </svg>
                       <span className={s.itemDetailsText}>
                         {el.adults} adults
@@ -111,14 +110,14 @@ export default function CampersList() {
                           height="20"
                           className={s.itemDetailsIcon}
                         >
-                          <use href="#icon-kitchen"></use>
+                          <use href="#icon-Kitchen"></use>
                         </svg>
                         <span className={s.itemDetailsText}>Kitchen</span>
                       </li>
                     )}
                     <li className={s.itemDetailsPoint}>
                       <svg width="20" height="20" className={s.itemDetailsIcon}>
-                        <use href="#icon-bed"></use>
+                        <use href="#icon-beds"></use>
                       </svg>
                       <span className={s.itemDetailsText}>
                         {el.details.beds} beds
@@ -131,7 +130,7 @@ export default function CampersList() {
                           height="20"
                           className={s.itemDetailsIcon}
                         >
-                          <use href="#icon-ac"></use>
+                          <use href="#icon-AC"></use>
                         </svg>
                         <span className={s.itemDetailsText}>AC</span>
                       </li>

@@ -1,18 +1,19 @@
 import s from './CamperModal.module.css';
+import { ReactComponent as ReactSprite } from 'images/icons.svg';
 
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Suspense } from 'react';
+import { useSelector } from 'react-redux';
 
-import { ReactComponent as ReactSprite } from 'images/icons.svg';
-import data from 'data.json';
 import ModalForm from 'components/ModalForm';
+import { selectCampers } from 'store/campers/selectors';
 
 function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
-  const camper = data.find(el => el._id === camperId);
   const location = useLocation();
 
-  console.log(camper);
+  const campers = useSelector(selectCampers);
+  const camper = campers.find(el => el._id === camperId);
 
   const normalizePrice = price =>
     `€${price.slice(-9, -6)} ${price.slice(-6, -3)} ${price.slice(-3)},00`;
@@ -81,10 +82,12 @@ function CamperModal({ onModalClose }) {
         </ul>
       </div>
 
-      <div className={s.modalDetailWrapper}>
-        <Suspense fallback={<p>...loading</p>}>
-          <Outlet />
-        </Suspense>
+      <div className={s.modalDetailSection}>
+        <div className={s.modalDetailWrapper}>
+          <Suspense fallback={<p>...loading</p>}>
+            <Outlet context={[camper]} />
+          </Suspense>
+        </div>
         <ModalForm />
       </div>
     </div>

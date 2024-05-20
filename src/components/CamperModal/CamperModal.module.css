@@ -98,8 +98,12 @@
 }
 
 /* modal details */
-.modalDetailWrapper {
+.modalDetailSection {
   padding-top: 44px;
   display: flex;
   gap: 24px;
+}
+
+.modalDetailWrapper {
+  width: 430px;
 }

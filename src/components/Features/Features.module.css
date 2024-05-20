@@ -1,0 +1,52 @@
+/* item detail list */
+.itemTagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px;
+}
+
+.itemTagsPoint {
+  padding: 12px 18px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--light-gray-color);
+}
+
+.itemTagsText {
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.featuresTitle {
+  position: relative;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 48px;
+}
+.featuresTitle::after {
+  position: absolute;
+  bottom: -24px;
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--light-grey-trans);
+}
+
+.itemDetails {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.detailsPoint {
+  display: flex;
+  justify-content: space-between;
+}
+.detailsPoint:not(:last-child) {
+  margin-bottom: 14px;
+}
