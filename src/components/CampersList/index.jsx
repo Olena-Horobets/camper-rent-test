@@ -7,10 +7,15 @@ import { ReactComponent as ReactSprite } from 'images/icons.svg';
 
 import {
   selectCampers,
+  selectFavoritesCampers,
   selectIsLastPage,
   selectIsLoading,
 } from 'store/campers/selectors';
-import { getAllCampersAction, getNextPageAction } from 'store/campers/slice';
+import {
+  getAllCampersAction,
+  getNextPageAction,
+  addToFavoriteAction,
+} from 'store/campers/slice';
 
 import Button from 'components/Button';
 
@@ -20,12 +25,15 @@ export default function CampersList() {
   const dispatch = useDispatch();
 
   const campers = useSelector(selectCampers);
+  const favorites = useSelector(selectFavoritesCampers);
   const isLoading = useSelector(selectIsLoading);
   const isLastPage = useSelector(selectIsLastPage);
+
   useEffect(() => {
     dispatch(getAllCampersAction());
   }, [dispatch]);
 
+  // action functions
   const onOpenModalClick = id => {
     document.querySelector('body').classList.add('bodyFixed');
     navigate(`camper/${id}/features`, {
@@ -37,8 +45,15 @@ export default function CampersList() {
     dispatch(getNextPageAction());
   };
 
+  const onAddToFavClick = item => {
+    dispatch(addToFavoriteAction(item));
+  };
+
+  // helper functions
   const normalizePrice = price =>
     `€${price.slice(-9, -6)} ${price.slice(-6, -3)} ${price.slice(-3)},00`;
+
+  const isFavorite = id => favorites.find(el => el === id);
 
   return (
     <>
@@ -65,9 +80,20 @@ export default function CampersList() {
                           {normalizePrice(String(el.price))}
                         </span>
 
-                        <svg width="24" height="24">
-                          <use href="#icon-heart-empty"></use>
-                        </svg>
+                        <button
+                          className={s.cardFavBtn}
+                          onClick={() => onAddToFavClick(el._id)}
+                        >
+                          <svg width="24" height="24">
+                            <use
+                              href={
+                                isFavorite(el._id)
+                                  ? '#icon-heart-full'
+                                  : '#icon-heart-empty'
+                              }
+                            ></use>
+                          </svg>
+                        </button>
                       </span>
                     </div>
 

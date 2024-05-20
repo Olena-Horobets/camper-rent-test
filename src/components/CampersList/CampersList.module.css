@@ -45,6 +45,11 @@
   gap: 10px;
 }
 
+.cardFavBtn {
+  display: flex;
+  background-color: transparent;
+}
+
 /* card sub header */
 .cardSubHeader {
   font-size: 16px;

@@ -14,6 +14,7 @@ const initialState = {
   page: 1,
   isLastPage: false,
   visibleItems: [],
+  favorites: [],
 };
 
 export const getAllCampersAction = createAsyncThunk(
@@ -35,6 +36,13 @@ export const campersSlice = createSlice({
       const start = state.visibleItems.length;
       state.visibleItems.push(...state.items.slice(start, start + 4));
     },
+    addToFavoriteAction(state, { payload }) {
+      const index = state.favorites.findIndex(el => el === payload);
+
+      index >= 0
+        ? state.favorites.splice(index, 1)
+        : state.favorites.push(payload);
+    },
   },
 
   extraReducers: builder => {
@@ -55,4 +63,4 @@ export const campersSlice = createSlice({
 });
 
 export const campersReducer = campersSlice.reducer;
-export const { getNextPageAction } = campersSlice.actions;
+export const { getNextPageAction, addToFavoriteAction } = campersSlice.actions;

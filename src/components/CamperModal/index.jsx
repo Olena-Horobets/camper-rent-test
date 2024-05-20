@@ -76,7 +76,7 @@ function CamperModal({ onModalClose }) {
                 isActive ? 'navLinkActive' : 'navLink'
               }
             >
-              Revievs
+              Reviews
             </NavLink>
           </li>
         </ul>
