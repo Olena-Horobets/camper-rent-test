@@ -1,9 +1,9 @@
 import s from './CampersList.module.css';
+import { ReactComponent as ReactSprite } from 'images/icons.svg';
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ReactComponent as ReactSprite } from 'images/icons.svg';
 
 import {
   selectCampers,

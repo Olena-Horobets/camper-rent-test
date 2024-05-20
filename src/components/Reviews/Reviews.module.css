@@ -1,0 +1,47 @@
+.reviewItem {
+  margin-bottom: 24px;
+}
+
+.reviewWrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: flex-end;
+}
+
+.reviewImg {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray-color);
+
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.reviewName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.reviewComment {
+  color: var(--dark-grey-color);
+}
+
+.iconFull {
+  fill: var(--yellow-color);
+}
+
+.iconEmpty {
+  fill: var(--light-gray-color);
+}
+
+.ratingList {
+  display: flex;
+  gap: 4px;
+}
