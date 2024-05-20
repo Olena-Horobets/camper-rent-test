@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 
 import { ReactComponent as ReactSprite } from 'images/icons.svg';
 import data from 'data.json';
+import ModalForm from 'components/ModalForm';
 
 function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
@@ -21,7 +22,7 @@ function CamperModal({ onModalClose }) {
       <ReactSprite />
 
       <button onClick={onModalClose} className={s.modalClose}>
-        <svg width="32" height="32">
+        <svg width="32" height="32" className={s.modalCloseIcon}>
           <use href="#icon-close"></use>
         </svg>
       </button>
@@ -80,9 +81,12 @@ function CamperModal({ onModalClose }) {
         </ul>
       </div>
 
-      <Suspense fallback={<p>...loading</p>}>
-        <Outlet />
-      </Suspense>
+      <div className={s.modalDetailWrapper}>
+        <Suspense fallback={<p>...loading</p>}>
+          <Outlet />
+        </Suspense>
+        <ModalForm />
+      </div>
     </div>
   );
 }

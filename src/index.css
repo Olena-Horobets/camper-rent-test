@@ -14,6 +14,7 @@
   --dark-grey-trans: rgb(16, 24, 40, 60%);
   --white-trans: #ffffffa3;
   --blur: blur(2px);
+  --border: 1px solid var(--light-grey-trans);
 
   --transition: 150ms ease-out;
 }
