@@ -28,3 +28,18 @@
   composes: btn;
   padding: 16px 60px;
 }
+
+/* load more */
+.loadMoreBtn {
+  composes: btn;
+  padding: 16px 32px;
+  background-color: var(--white-color);
+  border: var(--border);
+  color: var(--main-dark-color);
+}
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+  color: var(--white-color);
+  background-color: var(--dark-grey-color);
+  border: 1px solid transparent;
+}
