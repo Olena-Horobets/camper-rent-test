@@ -1,3 +1,4 @@
+import Button from 'components/Button';
 import s from './CampersFilters.module.css';
 
 import { ReactComponent as ReactSprite } from 'images/icons.svg';
@@ -55,7 +56,7 @@ export default function CampersFilters() {
       </ul>
 
       <p className={s.filterSubtitle}>Vehicle type</p>
-      <ul className={s.filterList}>
+      <ul className={s.filterListSecond}>
         <li className={s.filterItem}>
           <input type="checkbox" name="tv" className={s.filterCheckbox}></input>
           <svg width="40" height="28" className={s.filterCheckboxIcon}>
@@ -78,6 +79,13 @@ export default function CampersFilters() {
           <span className={s.filterCheckboxText}>Alcove</span>
         </li>
       </ul>
+
+      <Button
+        type="button"
+        onClick={() => console.log(12)}
+        className="filterBtn"
+        text="Search"
+      />
     </div>
   );
 }

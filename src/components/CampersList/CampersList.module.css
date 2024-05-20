@@ -97,17 +97,3 @@
   composes: itemDetailsText;
   text-transform: capitalize;
 }
-
-/* card button */
-.cardBtn {
-  padding: 16px 40px;
-  background-color: var(--accent-color);
-  color: var(--white-color);
-  border-radius: 200px;
-
-  transition: var(--transition);
-}
-.cardBtn:hover,
-.cardBtn:focus {
-  background-color: var(--dark-accent-color);
-}

@@ -9,6 +9,7 @@ import { selectCampers, selectIsLoading } from 'store/campers/selectors';
 import { getAllCampersAction } from 'store/campers/slice';
 
 import data from 'data.json';
+import Button from 'components/Button';
 
 export default function CampersList() {
   const navigate = useNavigate();
@@ -136,13 +137,12 @@ export default function CampersList() {
                       </li>
                     )}
                   </ul>
-
-                  <button
+                  <Button
+                    type="button"
                     onClick={() => onOpenModalClick(el._id)}
-                    className={s.cardBtn}
-                  >
-                    Show more
-                  </button>
+                    className="cardBtn"
+                    text="Show more"
+                  />
                 </div>
               </li>
             );
