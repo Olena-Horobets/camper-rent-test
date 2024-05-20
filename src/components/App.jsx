@@ -12,7 +12,7 @@ import ModalBackdrop from './ModalBackdrop';
 
 export const App = () => {
   return (
-    <div className="container">
+    <div className="mainContainer">
       <Header />
 
       <Suspense fallback={<p>...loading</p>}>

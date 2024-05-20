@@ -1,0 +1,97 @@
+.filterSection {
+  width: 360px;
+}
+
+/* first filters section */
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  color: var(--dark-grey-trans);
+  transition: var(--transition);
+}
+.label:focus-within {
+  color: var(--main-dark-color);
+}
+
+.filterTitle {
+  color: var(--dark-grey-trans);
+}
+
+.filterInput {
+  border: none;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 18px 18px 18px 44px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+}
+.filterInput:focus {
+  outline: none;
+}
+
+.filterLocationIcon {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+}
+
+/* second folters section */
+.filterTitleSecond {
+  composes: filterTitle;
+  margin-bottom: 14px;
+}
+
+.filterSubtitle {
+  position: relative;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 48px;
+}
+.filterSubtitle::after {
+  position: absolute;
+  bottom: -24px;
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--light-grey-trans);
+}
+
+.filterList {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  row-gap: 8px;
+  column-gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.filterItem {
+  position: relative;
+  width: 112px;
+  height: 95px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+
+  border-radius: 10px;
+  border: 1px solid var(--light-grey-trans);
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.filterCheckbox {
+  position: absolute;
+  width: 112px;
+  height: 95px;
+  opacity: 0;
+}

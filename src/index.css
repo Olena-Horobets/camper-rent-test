@@ -9,7 +9,9 @@
   --light-color: #f7f7f7;
   --white-color: #fff;
 
-  --dark-accent-color: #b92a2a;
+  --dark-accent-color: #d13d3d;
+  --light-grey-trans: rgb(16, 24, 40, 20%);
+  --dark-grey-trans: rgb(16, 24, 40, 60%);
 
   --transition: 150ms ease-out;
 }
@@ -86,4 +88,10 @@ button {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+.mainContainer {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
