@@ -19,7 +19,6 @@ export default function ModalForm() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-
     resetForm();
   };
 

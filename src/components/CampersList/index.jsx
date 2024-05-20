@@ -6,28 +6,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
-  selectCampers,
-  selectFavoritesCampers,
-  selectIsLastPage,
+  selectFavoritesCampersIds,
   selectIsLoading,
 } from 'store/campers/selectors';
-import {
-  getAllCampersAction,
-  getNextPageAction,
-  addToFavoriteAction,
-} from 'store/campers/slice';
+import { getAllCampersAction, addToFavoriteAction } from 'store/campers/slice';
 
 import Button from 'components/Button';
 
-export default function CampersList() {
+export default function CampersList({ campers }) {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const campers = useSelector(selectCampers);
-  const favorites = useSelector(selectFavoritesCampers);
+  const favorites = useSelector(selectFavoritesCampersIds);
   const isLoading = useSelector(selectIsLoading);
-  const isLastPage = useSelector(selectIsLastPage);
 
   useEffect(() => {
     dispatch(getAllCampersAction());
@@ -39,10 +31,6 @@ export default function CampersList() {
     navigate(`camper/${id}/features`, {
       state: { background: location },
     });
-  };
-
-  const onLoadMoreClick = () => {
-    dispatch(getNextPageAction());
   };
 
   const onAddToFavClick = item => {
@@ -203,15 +191,6 @@ export default function CampersList() {
               );
             })}
           </ul>
-
-          {!isLastPage && (
-            <Button
-              type="button"
-              onClick={onLoadMoreClick}
-              className="loadMoreBtn"
-              text="Load more"
-            />
-          )}
         </div>
       )}
     </>

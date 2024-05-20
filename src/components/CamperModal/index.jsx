@@ -6,13 +6,13 @@ import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 
 import ModalForm from 'components/ModalForm';
-import { selectCampers } from 'store/campers/selectors';
+import { selectAllCampers } from 'store/campers/selectors';
 
 function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
   const location = useLocation();
 
-  const campers = useSelector(selectCampers);
+  const campers = useSelector(selectAllCampers);
   const camper = campers.find(el => el._id === camperId);
 
   const normalizePrice = price =>

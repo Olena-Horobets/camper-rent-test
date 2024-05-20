@@ -31,7 +31,19 @@ export const App = () => {
               <Route path="reviews" element={<Reviews />} />
             </Route>
           </Route>
-          <Route path="/favorites" element={<FavouritesPage />} />
+          <Route path="/favorites" element={<FavouritesPage />}>
+            <Route
+              path="camper/:camperId"
+              element={
+                <ModalBackdrop>
+                  <CamperModal />
+                </ModalBackdrop>
+              }
+            >
+              <Route index path="features" element={<Features />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Route>
+          </Route>
           <Route path="/*" element={<div>error</div>} />
         </Routes>
       </Suspense>

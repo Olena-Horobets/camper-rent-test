@@ -3,3 +3,10 @@
   gap: 64px;
   padding: 100px 64px;
 }
+
+.campersPageWrapper {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+}
