@@ -70,6 +70,7 @@ export default function CampersList() {
                     className={s.cardImg}
                     src={el.gallery[0]}
                     alt={el.name}
+                    width="290"
                   ></img>
 
                   <div className={s.cardContent}>

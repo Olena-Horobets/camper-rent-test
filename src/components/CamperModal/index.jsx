@@ -48,7 +48,12 @@ function CamperModal({ onModalClose }) {
       <ul className={s.modalGallery}>
         {camper.gallery.map((el, id) => (
           <li key={id}>
-            <img className={s.modalImg} src={el} alt={camper.name}></img>
+            <img
+              className={s.modalImg}
+              src={el}
+              alt={camper.name}
+              width="290"
+            ></img>
           </li>
         ))}
       </ul>
