@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/camper-rent-test/static/css/main.ccc5d5b7.css",
-    "main.js": "/camper-rent-test/static/js/main.9a34d306.js",
+    "main.css": "/camper-rent-test/static/css/main.84e2e3f9.css",
+    "main.js": "/camper-rent-test/static/js/main.1f1edc2c.js",
     "reactPlayerYouTube.js": "/camper-rent-test/static/js/reactPlayerYouTube.4cdf0f8a.chunk.js",
     "reactPlayerSoundCloud.js": "/camper-rent-test/static/js/reactPlayerSoundCloud.bfb919ee.chunk.js",
     "reactPlayerVimeo.js": "/camper-rent-test/static/js/reactPlayerVimeo.98dd3328.chunk.js",
@@ -19,8 +19,8 @@
     "static/media/camperVideo.mp4": "/camper-rent-test/static/media/camperVideo.b5a59c6723177ed85faf.mp4",
     "static/media/icons.svg": "/camper-rent-test/static/media/icons.5f71bb23eaafa8b62a093b26ed790ca7.svg",
     "index.html": "/camper-rent-test/index.html",
-    "main.ccc5d5b7.css.map": "/camper-rent-test/static/css/main.ccc5d5b7.css.map",
-    "main.9a34d306.js.map": "/camper-rent-test/static/js/main.9a34d306.js.map",
+    "main.84e2e3f9.css.map": "/camper-rent-test/static/css/main.84e2e3f9.css.map",
+    "main.1f1edc2c.js.map": "/camper-rent-test/static/js/main.1f1edc2c.js.map",
     "reactPlayerYouTube.4cdf0f8a.chunk.js.map": "/camper-rent-test/static/js/reactPlayerYouTube.4cdf0f8a.chunk.js.map",
     "reactPlayerSoundCloud.bfb919ee.chunk.js.map": "/camper-rent-test/static/js/reactPlayerSoundCloud.bfb919ee.chunk.js.map",
     "reactPlayerVimeo.98dd3328.chunk.js.map": "/camper-rent-test/static/js/reactPlayerVimeo.98dd3328.chunk.js.map",
@@ -37,7 +37,7 @@
     "reactPlayerPreview.d04271e3.chunk.js.map": "/camper-rent-test/static/js/reactPlayerPreview.d04271e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccc5d5b7.css",
-    "static/js/main.9a34d306.js"
+    "static/css/main.84e2e3f9.css",
+    "static/js/main.1f1edc2c.js"
   ]
 }
