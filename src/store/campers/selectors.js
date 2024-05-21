@@ -4,15 +4,12 @@ import {
   selectLocationFilter,
 } from 'store/filter/selectors';
 
+// list selectors
 export const selectAllCampers = state => state.campers.items;
 
 export const selectVisibleCampers = state => state.campers.visibleItems;
 
 export const selectFavoritesCampersIds = state => state.campers.favorites;
-
-export const selectIsLoading = state => state.campers.isLoading;
-
-export const selectIsLastPage = state => state.campers.isLastPage;
 
 export const selectFavoritesCampers = createSelector(
   [selectAllCampers, selectFavoritesCampersIds],
@@ -33,6 +30,11 @@ export const selectFilteredCampers = createSelector(
     }
   }
 );
+
+// utils selectors
+export const selectIsLoading = state => state.campers.isLoading;
+
+export const selectIsLastPage = state => state.campers.isLastPage;
 
 export const isLoadMoreShown = createSelector(
   [selectIsLastPage, selectIsSetFilter],

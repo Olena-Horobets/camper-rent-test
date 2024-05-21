@@ -43,7 +43,6 @@ function Reviews() {
                       <ul className={s.ratingList}>
                         {getStarRating(el.reviewer_rating)}
                       </ul>
-                      {/* <p className={s.reviewRating}>{el.reviewer_rating}</p> */}
                     </div>
                   </div>
 

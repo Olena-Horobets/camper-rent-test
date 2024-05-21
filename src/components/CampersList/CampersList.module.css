@@ -87,28 +87,6 @@
 }
 
 /* item detail list */
-.itemDetails {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.tagsWrapper {
   margin-bottom: 24px;
-}
-
-.itemDetailsPoint {
-  padding: 12px 18px;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--light-gray-color);
-}
-
-.itemDetailsText {
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.itemDetailsTextCapital {
-  composes: itemDetailsText;
-  text-transform: capitalize;
 }

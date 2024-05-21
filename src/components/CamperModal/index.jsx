@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import ModalForm from 'components/ModalForm';
 import { selectAllCampers } from 'store/campers/selectors';
 import { Loader } from 'components/Loader';
+import { normalizePrice } from 'utils/helpers';
 
 function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
@@ -15,9 +16,6 @@ function CamperModal({ onModalClose }) {
 
   const campers = useSelector(selectAllCampers);
   const camper = campers.find(el => el._id === camperId);
-
-  const normalizePrice = price =>
-    `€${price.slice(-9, -6)} ${price.slice(-6, -3)} ${price.slice(-3)},00`;
 
   return (
     <div className={s.modal}>
@@ -43,7 +41,7 @@ function CamperModal({ onModalClose }) {
           </svg>
           <span className={s.itemLocation}>{camper.location}</span>
         </div>
-        <p className={s.modalPrice}>{normalizePrice(String(camper.price))}</p>
+        <p className={s.modalPrice}>{normalizePrice(camper.price)}</p>
       </div>
 
       <ul className={s.modalGallery}>

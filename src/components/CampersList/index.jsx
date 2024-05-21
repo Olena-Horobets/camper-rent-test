@@ -13,6 +13,10 @@ import { getAllCampersAction, addToFavoriteAction } from 'store/campers/slice';
 
 import Button from 'components/Button';
 import { Loader } from 'components/Loader';
+import TagsList from 'components/TagsList';
+import { normalizePrice } from 'utils/helpers';
+
+const tagsList = ['adults', 'transmission', 'engine', 'AC', 'beds', 'kitchen'];
 
 export default function CampersList({ campers }) {
   const navigate = useNavigate();
@@ -39,9 +43,6 @@ export default function CampersList({ campers }) {
   };
 
   // helper functions
-  const normalizePrice = price =>
-    `€${price.slice(-9, -6)} ${price.slice(-6, -3)} ${price.slice(-3)},00`;
-
   const isFavorite = id => favorites.find(el => el === id);
 
   return (
@@ -67,7 +68,7 @@ export default function CampersList({ campers }) {
                       <h2 className={s.itemName}>{el.name}</h2>
                       <span className={s.cardHeaderWrapper}>
                         <span className={s.itemPrice}>
-                          {normalizePrice(String(el.price))}
+                          {normalizePrice(el.price)}
                         </span>
 
                         <button
@@ -107,80 +108,10 @@ export default function CampersList({ campers }) {
                     <p className={s.itemDesc}>{el.description}</p>
 
                     <h3 className="visuallyHidden">Vehicle details</h3>
-                    <ul className={s.itemDetails}>
-                      <li className={s.itemDetailsPoint}>
-                        <svg
-                          width="20"
-                          height="20"
-                          className={s.itemDetailsIcon}
-                        >
-                          <use href="#icon-Adults"></use>
-                        </svg>
-                        <span className={s.itemDetailsText}>
-                          {el.adults} adults
-                        </span>
-                      </li>
-                      <li className={s.itemDetailsPoint}>
-                        <svg
-                          width="20"
-                          height="20"
-                          className={s.itemDetailsIcon}
-                        >
-                          <use href="#icon-transmission"></use>
-                        </svg>
-                        <span className={s.itemDetailsTextCapital}>
-                          {el.transmission}
-                        </span>
-                      </li>
-                      <li className={s.itemDetailsPoint}>
-                        <svg
-                          width="20"
-                          height="20"
-                          className={s.itemDetailsIcon}
-                        >
-                          <use href="#icon-engine"></use>
-                        </svg>
-                        <span className={s.itemDetailsTextCapital}>
-                          {el.engine}
-                        </span>
-                      </li>
-                      {el.details.kitchen && (
-                        <li className={s.itemDetailsPoint}>
-                          <svg
-                            width="20"
-                            height="20"
-                            className={s.itemDetailsIcon}
-                          >
-                            <use href="#icon-Kitchen"></use>
-                          </svg>
-                          <span className={s.itemDetailsText}>Kitchen</span>
-                        </li>
-                      )}
-                      <li className={s.itemDetailsPoint}>
-                        <svg
-                          width="20"
-                          height="20"
-                          className={s.itemDetailsIcon}
-                        >
-                          <use href="#icon-beds"></use>
-                        </svg>
-                        <span className={s.itemDetailsText}>
-                          {el.details.beds} beds
-                        </span>
-                      </li>
-                      {el.details.airConditioner && (
-                        <li className={s.itemDetailsPoint}>
-                          <svg
-                            width="20"
-                            height="20"
-                            className={s.itemDetailsIcon}
-                          >
-                            <use href="#icon-AC"></use>
-                          </svg>
-                          <span className={s.itemDetailsText}>AC</span>
-                        </li>
-                      )}
-                    </ul>
+                    <div className={s.tagsWrapper}>
+                      <TagsList camper={el} list={tagsList} />
+                    </div>
+
                     <Button
                       type="button"
                       onClick={() => onOpenModalClick(el._id)}
