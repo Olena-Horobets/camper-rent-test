@@ -2,20 +2,24 @@ import s from './CampersPage.module.css';
 
 import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Suspense } from 'react';
 
 import CampersList from 'components/CampersList';
 import CampersFilters from 'components/CampersFilters';
 import Button from 'components/Button';
-
-import { getNextPageAction } from 'store/campers/slice';
-import { selectCampers, selectIsLastPage } from 'store/campers/selectors';
-import { Suspense } from 'react';
 import { Loader } from 'components/Loader';
 
+import { getNextPageAction } from 'store/campers/slice';
+import {
+  isLoadMoreShown,
+  selectFilteredCampers,
+} from 'store/campers/selectors';
+
 function CampersPage() {
-  const campers = useSelector(selectCampers);
-  const isLastPage = useSelector(selectIsLastPage);
   const dispatch = useDispatch();
+
+  const campers = useSelector(selectFilteredCampers);
+  const showLoadMoreBtn = useSelector(isLoadMoreShown);
 
   const onLoadMoreClick = () => {
     dispatch(getNextPageAction());
@@ -27,7 +31,7 @@ function CampersPage() {
 
       <div className={s.campersPageWrapper}>
         <CampersList campers={campers} />
-        {!isLastPage && (
+        {showLoadMoreBtn && (
           <Button
             type="button"
             onClick={onLoadMoreClick}

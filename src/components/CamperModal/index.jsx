@@ -53,7 +53,7 @@ function CamperModal({ onModalClose }) {
               className={s.modalImg}
               src={el}
               alt={camper.name}
-              width="290"
+              width="290px"
             ></img>
           </li>
         ))}

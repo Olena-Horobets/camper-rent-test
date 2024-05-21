@@ -59,7 +59,7 @@ export default function CampersList({ campers }) {
                     className={s.cardImg}
                     src={el.gallery[0]}
                     alt={el.name}
-                    width="290"
+                    width="290px"
                   ></img>
 
                   <div className={s.cardContent}>

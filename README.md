@@ -5,7 +5,7 @@
 Student test task, created by the team of one developer, respecting timely
 limited deadline of five days.
 
-                        --------------------
+---
 
 ## Project overview
 
@@ -27,6 +27,6 @@ request, and pick up your camper in your area!
 - Dinamic elements added with **Lottie** and **React Player**.
 - Persise content markup and styles are made using **Figma** project design.
 
-                        --------------------
+---
 
 We thank you for your attention. And don't forget to **Enjoy the ride**! 😎

@@ -27,6 +27,10 @@
   border-radius: 10px;
 }
 
+.cardContent {
+  text-align: left;
+}
+
 /* card header */
 .cardHeader {
   display: flex;

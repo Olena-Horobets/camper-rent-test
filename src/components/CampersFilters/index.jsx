@@ -1,11 +1,18 @@
-import Button from 'components/Button';
 import s from './CampersFilters.module.css';
-
 import { ReactComponent as ReactSprite } from 'images/icons.svg';
-import { useState } from 'react';
+
+import Button from 'components/Button';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLocationFilter } from 'store/filter/selectors';
+import {
+  resetLocationFilterAction,
+  setLocationFilterAction,
+} from 'store/filter/slice';
 
 export default function CampersFilters() {
-  const [location, setLocation] = useState('Ukraine, Kyiv');
+  const dispatch = useDispatch();
+  const location = useSelector(selectLocationFilter);
 
   return (
     <div className={s.filterSection}>
@@ -16,11 +23,17 @@ export default function CampersFilters() {
           id="location"
           className={s.filterInput}
           value={location}
-          onChange={e => setLocation(e.target.value)}
+          onChange={e => dispatch(setLocationFilterAction(e.target.value))}
         ></input>
         <svg width="18" height="20" className={s.filterLocationIcon}>
           <use href="#icon-location"></use>
         </svg>
+        <button
+          className={s.filterClearBtn}
+          onClick={() => dispatch(resetLocationFilterAction())}
+        >
+          X
+        </button>
       </label>
 
       <p className={s.filterTitleSecond}>Filters</p>

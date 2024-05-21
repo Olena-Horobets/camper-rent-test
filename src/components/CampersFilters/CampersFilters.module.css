@@ -25,7 +25,7 @@
   background-color: var(--light-color);
   color: currentColor;
   border-radius: 10px;
-  padding: 18px 18px 18px 44px;
+  padding: 18px 38px 18px 44px;
   width: 100%;
   font-size: 16px;
   line-height: 20px;
@@ -41,7 +41,25 @@
   fill: currentColor;
 }
 
-/* second folters section */
+.filterClearBtn {
+  position: absolute;
+  top: 25px;
+  right: 0;
+
+  font-size: 18px;
+  color: var(--white-color);
+  background-color: var(--light-grey-trans);
+  border-radius: 0 10px 10px 0;
+  padding: 15px 12px;
+
+  transition: var(--transition);
+}
+.filterClearBtn:hover,
+.filterClearBtn:focus {
+  background-color: var(--accent-color);
+}
+
+/* second filters section */
 .filterTitleSecond {
   composes: filterTitle;
   margin-bottom: 14px;
