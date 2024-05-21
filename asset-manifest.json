@@ -1,13 +1,43 @@
 {
   "files": {
-    "main.css": "/camper-rent-test/static/css/main.d062bc7e.css",
-    "main.js": "/camper-rent-test/static/js/main.1a02e752.js",
+    "main.css": "/camper-rent-test/static/css/main.ccc5d5b7.css",
+    "main.js": "/camper-rent-test/static/js/main.87cd8a5c.js",
+    "reactPlayerYouTube.js": "/camper-rent-test/static/js/reactPlayerYouTube.4cdf0f8a.chunk.js",
+    "reactPlayerSoundCloud.js": "/camper-rent-test/static/js/reactPlayerSoundCloud.bfb919ee.chunk.js",
+    "reactPlayerVimeo.js": "/camper-rent-test/static/js/reactPlayerVimeo.98dd3328.chunk.js",
+    "reactPlayerMux.js": "/camper-rent-test/static/js/reactPlayerMux.b4871667.chunk.js",
+    "reactPlayerFacebook.js": "/camper-rent-test/static/js/reactPlayerFacebook.7b40820a.chunk.js",
+    "reactPlayerStreamable.js": "/camper-rent-test/static/js/reactPlayerStreamable.9e7bd89d.chunk.js",
+    "reactPlayerWistia.js": "/camper-rent-test/static/js/reactPlayerWistia.93ad8ba6.chunk.js",
+    "reactPlayerTwitch.js": "/camper-rent-test/static/js/reactPlayerTwitch.19355d7e.chunk.js",
+    "reactPlayerDailyMotion.js": "/camper-rent-test/static/js/reactPlayerDailyMotion.82d92d05.chunk.js",
+    "reactPlayerMixcloud.js": "/camper-rent-test/static/js/reactPlayerMixcloud.5a96fd80.chunk.js",
+    "reactPlayerVidyard.js": "/camper-rent-test/static/js/reactPlayerVidyard.120f5d50.chunk.js",
+    "reactPlayerKaltura.js": "/camper-rent-test/static/js/reactPlayerKaltura.4b9540dc.chunk.js",
+    "reactPlayerFilePlayer.js": "/camper-rent-test/static/js/reactPlayerFilePlayer.f586b82d.chunk.js",
+    "reactPlayerPreview.js": "/camper-rent-test/static/js/reactPlayerPreview.d04271e3.chunk.js",
+    "static/media/camperVideo.mp4": "/camper-rent-test/static/media/camperVideo.b5a59c6723177ed85faf.mp4",
+    "static/media/icons.svg": "/camper-rent-test/static/media/icons.5f71bb23eaafa8b62a093b26ed790ca7.svg",
     "index.html": "/camper-rent-test/index.html",
-    "main.d062bc7e.css.map": "/camper-rent-test/static/css/main.d062bc7e.css.map",
-    "main.1a02e752.js.map": "/camper-rent-test/static/js/main.1a02e752.js.map"
+    "main.ccc5d5b7.css.map": "/camper-rent-test/static/css/main.ccc5d5b7.css.map",
+    "main.87cd8a5c.js.map": "/camper-rent-test/static/js/main.87cd8a5c.js.map",
+    "reactPlayerYouTube.4cdf0f8a.chunk.js.map": "/camper-rent-test/static/js/reactPlayerYouTube.4cdf0f8a.chunk.js.map",
+    "reactPlayerSoundCloud.bfb919ee.chunk.js.map": "/camper-rent-test/static/js/reactPlayerSoundCloud.bfb919ee.chunk.js.map",
+    "reactPlayerVimeo.98dd3328.chunk.js.map": "/camper-rent-test/static/js/reactPlayerVimeo.98dd3328.chunk.js.map",
+    "reactPlayerMux.b4871667.chunk.js.map": "/camper-rent-test/static/js/reactPlayerMux.b4871667.chunk.js.map",
+    "reactPlayerFacebook.7b40820a.chunk.js.map": "/camper-rent-test/static/js/reactPlayerFacebook.7b40820a.chunk.js.map",
+    "reactPlayerStreamable.9e7bd89d.chunk.js.map": "/camper-rent-test/static/js/reactPlayerStreamable.9e7bd89d.chunk.js.map",
+    "reactPlayerWistia.93ad8ba6.chunk.js.map": "/camper-rent-test/static/js/reactPlayerWistia.93ad8ba6.chunk.js.map",
+    "reactPlayerTwitch.19355d7e.chunk.js.map": "/camper-rent-test/static/js/reactPlayerTwitch.19355d7e.chunk.js.map",
+    "reactPlayerDailyMotion.82d92d05.chunk.js.map": "/camper-rent-test/static/js/reactPlayerDailyMotion.82d92d05.chunk.js.map",
+    "reactPlayerMixcloud.5a96fd80.chunk.js.map": "/camper-rent-test/static/js/reactPlayerMixcloud.5a96fd80.chunk.js.map",
+    "reactPlayerVidyard.120f5d50.chunk.js.map": "/camper-rent-test/static/js/reactPlayerVidyard.120f5d50.chunk.js.map",
+    "reactPlayerKaltura.4b9540dc.chunk.js.map": "/camper-rent-test/static/js/reactPlayerKaltura.4b9540dc.chunk.js.map",
+    "reactPlayerFilePlayer.f586b82d.chunk.js.map": "/camper-rent-test/static/js/reactPlayerFilePlayer.f586b82d.chunk.js.map",
+    "reactPlayerPreview.d04271e3.chunk.js.map": "/camper-rent-test/static/js/reactPlayerPreview.d04271e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d062bc7e.css",
-    "static/js/main.1a02e752.js"
+    "static/css/main.ccc5d5b7.css",
+    "static/js/main.87cd8a5c.js"
   ]
 }
