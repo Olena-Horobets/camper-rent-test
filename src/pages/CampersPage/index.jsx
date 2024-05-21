@@ -9,6 +9,8 @@ import Button from 'components/Button';
 
 import { getNextPageAction } from 'store/campers/slice';
 import { selectCampers, selectIsLastPage } from 'store/campers/selectors';
+import { Suspense } from 'react';
+import { Loader } from 'components/Loader';
 
 function CampersPage() {
   const campers = useSelector(selectCampers);
@@ -35,7 +37,9 @@ function CampersPage() {
         )}
       </div>
 
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

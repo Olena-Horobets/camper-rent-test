@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 
 import ModalForm from 'components/ModalForm';
 import { selectAllCampers } from 'store/campers/selectors';
+import { Loader } from 'components/Loader';
 
 function CamperModal({ onModalClose }) {
   const { camperId } = useParams();
@@ -89,7 +90,7 @@ function CamperModal({ onModalClose }) {
 
       <div className={s.modalDetailSection}>
         <div className={s.modalDetailWrapper}>
-          <Suspense fallback={<p>...loading</p>}>
+          <Suspense fallback={<Loader />}>
             <Outlet context={[camper]} />
           </Suspense>
         </div>

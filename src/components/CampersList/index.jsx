@@ -12,6 +12,7 @@ import {
 import { getAllCampersAction, addToFavoriteAction } from 'store/campers/slice';
 
 import Button from 'components/Button';
+import { Loader } from 'components/Loader';
 
 export default function CampersList({ campers }) {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export default function CampersList({ campers }) {
     <>
       <ReactSprite />
       {isLoading ? (
-        <p>...loading</p>
+        <Loader />
       ) : (
         <div className={s.listWrapper}>
           <ul className={s.list}>

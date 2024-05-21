@@ -9,13 +9,14 @@ import Features from './Features';
 import Reviews from './Reviews';
 import CamperModal from './CamperModal';
 import ModalBackdrop from './ModalBackdrop';
+import { Loader } from './Loader';
 
 export const App = () => {
   return (
     <>
       <Header />
       <div className="mainContainer">
-        <Suspense fallback={<p>...loading</p>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CampersPage />}>
