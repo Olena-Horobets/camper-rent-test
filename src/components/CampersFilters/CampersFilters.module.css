@@ -23,6 +23,7 @@
 .filterInput {
   border: none;
   background-color: var(--light-color);
+  color: currentColor;
   border-radius: 10px;
   padding: 18px 18px 18px 44px;
   width: 100%;
@@ -37,6 +38,7 @@
   position: absolute;
   bottom: 18px;
   left: 18px;
+  fill: currentColor;
 }
 
 /* second folters section */
