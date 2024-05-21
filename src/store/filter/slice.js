@@ -12,9 +12,17 @@ const filterSlice = createSlice({
     resetLocationFilterAction: state => {
       state.location = '';
     },
+    toggleTypeFilterAction: (state, { payload }) => {
+      const idx = state.type.findIndex(el => el === payload);
+
+      idx >= 0 ? state.type.splice(idx, 1) : state.type.push(payload);
+    },
   },
 });
 
-export const { setLocationFilterAction, resetLocationFilterAction } =
-  filterSlice.actions;
+export const {
+  setLocationFilterAction,
+  resetLocationFilterAction,
+  toggleTypeFilterAction,
+} = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

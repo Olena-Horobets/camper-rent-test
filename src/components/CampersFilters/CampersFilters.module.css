@@ -112,10 +112,19 @@
   font-weight: 500;
   line-height: 20px;
 }
+.filterItem:has(> .filterCheckbox:checked) {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
 
 .filterCheckbox {
   position: absolute;
   width: 112px;
   height: 95px;
   opacity: 0;
+  cursor: pointer;
+}
+
+.filterCheckboxIcon {
+  fill: currentColor;
 }

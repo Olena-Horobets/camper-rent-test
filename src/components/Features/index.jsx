@@ -36,7 +36,7 @@ function Features() {
         {['form', 'length', 'width', 'height', 'tank', 'consumption'].map(
           el => {
             return (
-              <li className={s.detailsPoint}>
+              <li className={s.detailsPoint} key={el}>
                 <span className={s.detailsName}>{el}</span>
                 <span className={s.detailsValue}>{camper[el]}</span>
               </li>

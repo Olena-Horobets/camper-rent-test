@@ -90,3 +90,12 @@
 .tagsWrapper {
   margin-bottom: 24px;
 }
+
+.emptyMessage {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--light-grey-trans);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

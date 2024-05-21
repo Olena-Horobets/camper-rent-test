@@ -8,11 +8,16 @@ import { selectLocationFilter } from 'store/filter/selectors';
 import {
   resetLocationFilterAction,
   setLocationFilterAction,
+  toggleTypeFilterAction,
 } from 'store/filter/slice';
 
 export default function CampersFilters() {
   const dispatch = useDispatch();
   const location = useSelector(selectLocationFilter);
+
+  const onCheckboxCheck = e => {
+    dispatch(toggleTypeFilterAction(e.target.value));
+  };
 
   return (
     <div className={s.filterSection}>
@@ -93,7 +98,9 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="van"
+            name="type"
+            value="panelTruck"
+            onChange={onCheckboxCheck}
             className={s.filterCheckbox}
           ></input>
           <svg width="40" height="28" className={s.filterCheckboxIcon}>
@@ -104,7 +111,9 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="fullyIntegrated"
+            name="type"
+            value="fullyIntegrated"
+            onChange={onCheckboxCheck}
             className={s.filterCheckbox}
           ></input>
           <svg width="40" height="28" className={s.filterCheckboxIcon}>
@@ -115,7 +124,9 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="alcove"
+            name="type"
+            value="alcove"
+            onChange={onCheckboxCheck}
             className={s.filterCheckbox}
           ></input>
           <svg width="40" height="28" className={s.filterCheckboxIcon}>

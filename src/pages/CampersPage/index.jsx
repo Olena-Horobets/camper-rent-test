@@ -2,14 +2,14 @@ import s from './CampersPage.module.css';
 
 import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 import CampersList from 'components/CampersList';
 import CampersFilters from 'components/CampersFilters';
 import Button from 'components/Button';
 import { Loader } from 'components/Loader';
 
-import { getNextPageAction } from 'store/campers/slice';
+import { getAllCampersAction, getNextPageAction } from 'store/campers/slice';
 import {
   isLoadMoreShown,
   selectFilteredCampers,
@@ -20,6 +20,10 @@ function CampersPage() {
 
   const campers = useSelector(selectFilteredCampers);
   const showLoadMoreBtn = useSelector(isLoadMoreShown);
+
+  useEffect(() => {
+    dispatch(getAllCampersAction());
+  }, [dispatch]);
 
   const onLoadMoreClick = () => {
     dispatch(getNextPageAction());

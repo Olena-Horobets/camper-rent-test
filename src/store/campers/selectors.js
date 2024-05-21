@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import {
   selectIsSetFilter,
   selectLocationFilter,
+  selectTypeFilter,
 } from 'store/filter/selectors';
 
 // list selectors
@@ -19,15 +20,30 @@ export const selectFavoritesCampers = createSelector(
 );
 
 export const selectFilteredCampers = createSelector(
-  [selectAllCampers, selectLocationFilter, selectVisibleCampers],
-  (campers, location, visible) => {
-    if (location) {
-      return campers.filter(el => {
-        return el.location.toLowerCase().includes(location.toLocaleLowerCase());
-      });
-    } else {
+  [
+    selectAllCampers,
+    selectLocationFilter,
+    selectTypeFilter,
+    selectVisibleCampers,
+  ],
+  (campers, location, type, visible) => {
+    let filtered = campers;
+
+    if (!location && !type.length) {
       return visible;
     }
+
+    if (location) {
+      filtered = filtered.filter(el => {
+        return el.location.toLowerCase().includes(location.toLocaleLowerCase());
+      });
+    }
+
+    if (type.length) {
+      filtered = filtered.filter(camper => type.includes(camper.form));
+    }
+
+    return filtered;
   }
 );
 

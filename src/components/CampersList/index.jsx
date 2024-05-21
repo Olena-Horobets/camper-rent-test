@@ -1,19 +1,18 @@
 import s from './CampersList.module.css';
 import { ReactComponent as ReactSprite } from 'images/icons.svg';
 
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import Button from 'components/Button';
+import { Loader } from 'components/Loader';
+import TagsList from 'components/TagsList';
 
 import {
   selectFavoritesCampersIds,
   selectIsLoading,
 } from 'store/campers/selectors';
-import { getAllCampersAction, addToFavoriteAction } from 'store/campers/slice';
-
-import Button from 'components/Button';
-import { Loader } from 'components/Loader';
-import TagsList from 'components/TagsList';
+import { addToFavoriteAction } from 'store/campers/slice';
 import { normalizePrice } from 'utils/helpers';
 
 const tagsList = ['adults', 'transmission', 'engine', 'AC', 'beds', 'kitchen'];
@@ -25,10 +24,6 @@ export default function CampersList({ campers }) {
 
   const favorites = useSelector(selectFavoritesCampersIds);
   const isLoading = useSelector(selectIsLoading);
-
-  useEffect(() => {
-    dispatch(getAllCampersAction());
-  }, [dispatch]);
 
   // action functions
   const onOpenModalClick = id => {
@@ -50,6 +45,8 @@ export default function CampersList({ campers }) {
       <ReactSprite />
       {isLoading ? (
         <Loader />
+      ) : !campers.length ? (
+        <p className={s.emptyMessage}>We're sorry, the list is empty!</p>
       ) : (
         <div className={s.listWrapper}>
           <ul className={s.list}>
