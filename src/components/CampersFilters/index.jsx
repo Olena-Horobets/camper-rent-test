@@ -45,7 +45,13 @@ export default function CampersFilters() {
       <p className={s.filterSubtitle}>Vehicle equipment</p>
       <ul className={s.filterList}>
         <li className={s.filterItem}>
-          <input type="checkbox" name="ac" className={s.filterCheckbox}></input>
+          <input
+            type="checkbox"
+            name="details"
+            value
+            className={s.filterCheckbox}
+            disabled
+          ></input>
           <svg width="32" height="32" className={s.filterCheckboxIcon}>
             <use href="#icon-AC"></use>
           </svg>
@@ -54,8 +60,10 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="automatic"
+            name="transmission"
+            value="automatic"
             className={s.filterCheckbox}
+            disabled
           ></input>
           <svg width="32" height="32" className={s.filterCheckboxIcon}>
             <use href="#icon-transmission-light"></use>
@@ -65,8 +73,10 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="kitchen"
+            name="details"
+            value="kitchen"
             className={s.filterCheckbox}
+            disabled
           ></input>
           <svg width="32" height="32" className={s.filterCheckboxIcon}>
             <use href="#icon-kitchen-light"></use>
@@ -74,7 +84,13 @@ export default function CampersFilters() {
           <span className={s.filterCheckboxText}>Kitchen</span>
         </li>
         <li className={s.filterItem}>
-          <input type="checkbox" name="tv" className={s.filterCheckbox}></input>
+          <input
+            type="checkbox"
+            name="details"
+            value="tv"
+            className={s.filterCheckbox}
+            disabled
+          ></input>
           <svg width="32" height="32" className={s.filterCheckboxIcon}>
             <use href="#icon-tv"></use>
           </svg>
@@ -83,8 +99,10 @@ export default function CampersFilters() {
         <li className={s.filterItem}>
           <input
             type="checkbox"
-            name="shower"
+            name="details"
+            value="shower"
             className={s.filterCheckbox}
+            disabled
           ></input>
           <svg width="32" height="32" className={s.filterCheckboxIcon}>
             <use href="#icon-wc"></use>

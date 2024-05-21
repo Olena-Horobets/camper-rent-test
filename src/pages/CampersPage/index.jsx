@@ -13,11 +13,13 @@ import { getAllCampersAction, getNextPageAction } from 'store/campers/slice';
 import {
   isLoadMoreShown,
   selectFilteredCampers,
+  selectIsLoading,
 } from 'store/campers/selectors';
 
 function CampersPage() {
   const dispatch = useDispatch();
 
+  const isLoading = useSelector(selectIsLoading);
   const campers = useSelector(selectFilteredCampers);
   const showLoadMoreBtn = useSelector(isLoadMoreShown);
 
@@ -34,14 +36,20 @@ function CampersPage() {
       <CampersFilters />
 
       <div className={s.campersPageWrapper}>
-        <CampersList campers={campers} />
-        {showLoadMoreBtn && (
-          <Button
-            type="button"
-            onClick={onLoadMoreClick}
-            className="loadMoreBtn"
-            text="Load more"
-          />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <CampersList campers={campers} />
+            {showLoadMoreBtn && (
+              <Button
+                type="button"
+                onClick={onLoadMoreClick}
+                className="loadMoreBtn"
+                text="Load more"
+              />
+            )}
+          </>
         )}
       </div>
 

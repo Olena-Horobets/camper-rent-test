@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import {
+  selectDetailsFilter,
   selectIsSetFilter,
   selectLocationFilter,
   selectTypeFilter,
@@ -24,12 +25,13 @@ export const selectFilteredCampers = createSelector(
     selectAllCampers,
     selectLocationFilter,
     selectTypeFilter,
+    selectDetailsFilter,
     selectVisibleCampers,
   ],
-  (campers, location, type, visible) => {
+  (campers, location, type, details, visible) => {
     let filtered = campers;
 
-    if (!location && !type.length) {
+    if (!location && !type.length && !details.length) {
       return visible;
     }
 
@@ -41,6 +43,10 @@ export const selectFilteredCampers = createSelector(
 
     if (type.length) {
       filtered = filtered.filter(camper => type.includes(camper.form));
+    }
+
+    if (details.length) {
+      // filtered = filtered.filter(camper => type.includes(camper.details));
     }
 
     return filtered;

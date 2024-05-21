@@ -52,6 +52,7 @@ function CamperModal({ onModalClose }) {
               src={el}
               alt={camper.name}
               width="290px"
+              height="310px"
             ></img>
           </li>
         ))}
